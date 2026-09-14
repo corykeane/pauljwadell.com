@@ -68,39 +68,4 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Contact form
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-  const button = form.querySelector('button[type="submit"]');
-  const show = (msg, isError = false) => {
-    status.textContent = msg;
-    status.classList.toggle('error', isError);
-  };
-
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    if (form.elements._gotcha.value) return;
-
-    if (form.action.includes('YOUR_FORM_ID')) {
-      show('The contact form is not connected yet. Please check back soon.', true);
-      return;
-    }
-
-    button.disabled = true;
-    show('Sending…');
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
-      });
-      if (!res.ok) throw new Error(res.statusText);
-      form.reset();
-      show('Thank you. Your message has been sent.');
-    } catch {
-      show('Something went wrong. Please try again in a moment.', true);
-    } finally {
-      button.disabled = false;
-    }
-  });
 })();

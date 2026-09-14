@@ -397,7 +397,7 @@
         </div>
 
         <!-- FORM: replace YOUR_FORM_ID with a real endpoint (e.g. a Formspree form ID) to start receiving messages. -->
-        <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mqpkryqr" method="POST">
           <div class="form-row">
             <div class="field">
               <label for="name">Name</label>
@@ -411,23 +411,19 @@
 
           <div class="field">
             <label for="subject">Regarding</label>
-            <select id="subject" name="subject">
-              <option>General inquiry</option>
-              <option>Speaking invitation</option>
-              <option>Media or interview</option>
-              <option>Academic correspondence</option>
-              <option>A note about a book</option>
+            <select id="subject" name="subject" required>
+              <option value="General Inquiry">General inquiry</option>
+              <option value="Speaking invitation">Speaking invitation</option>
+              <option value="Media or interview">Media or interview</option>
+              <option value="Academic correspondence">Academic correspondence</option>
+              <option value="A note about a book">A note about a book</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 
           <div class="field">
             <label for="message">Message</label>
             <textarea id="message" name="message" required></textarea>
-          </div>
-
-          <div class="honeypot" aria-hidden="true">
-            <label for="website">Leave this field empty</label>
-            <input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
           </div>
 
           <div class="form-actions">
