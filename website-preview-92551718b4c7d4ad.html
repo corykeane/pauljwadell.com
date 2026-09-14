@@ -396,7 +396,6 @@
           <p>For speaking invitations, interviews, academic correspondence, or a note about one of the books.</p>
         </div>
 
-        <!-- FORM: replace YOUR_FORM_ID with a real endpoint (e.g. a Formspree form ID) to start receiving messages. -->
         <form class="contact-form" id="contact-form" action="https://formspree.io/f/mqpkryqr" method="POST">
           <div class="form-row">
             <div class="field">
@@ -412,6 +411,7 @@
           <div class="field">
             <label for="subject">Regarding</label>
             <select id="subject" name="subject" required>
+              <option value="" disabled selected>Select a topic</option>
               <option value="General Inquiry">General inquiry</option>
               <option value="Speaking invitation">Speaking invitation</option>
               <option value="Media or interview">Media or interview</option>
